@@ -1,0 +1,27 @@
+name: Simple CI/CD
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Get code
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Step 2: Run "tests"
+      - name: Run tests
+        run: |
+          echo "✅ Running tests..."
+          echo "All tests passed!"
+
+      # Step 3: Simulate deployment
+      - name: Deploy
+        run: |
+          echo "🚀 Deploying application..."
+          echo "Deployment complete!"
